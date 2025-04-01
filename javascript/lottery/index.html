@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottery Game</title>
+    <style>
+        div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+        div#heading{
+            font-size: xx-large;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        div#game_launcher{
+            margin-top: 10px;
+        }
+
+        button{
+            width: 80px;
+            height: 30px;
+            font-weight: bold;
+            font-style: italic;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        function lottery()
+        {
+            var lottery_number = Math.ceil(Math.random() * 10);
+            console.log(lottery_number);
+            var lives = 5;
+            var guessed_number;
+            while(lives > 0)
+            {
+                guessed_number = Number(prompt("Your Lives = " + lives + "\nYour Guess (between 1 and 10): ", 0));
+                if(guessed_number === lottery_number)
+                {
+                    alert("You Win!")
+                    break;
+                }
+                else
+                {
+                    lives--;
+                }
+            }
+
+            if(lives == 0)
+            {
+                alert("You lose.")
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <div id="heading">Lottery Game</div>
+        <div id="game_launcher">
+            <button onclick="lottery()">Start</button>
+        </div>
+    </div>
+</body>
+</html>

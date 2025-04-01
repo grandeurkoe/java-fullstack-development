@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        form{
+            width: 55%;
+        }
+
+        fieldset{
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+
+        span{
+            font-size: large;
+            font-weight: bold;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        table{
+                width: 100%;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-size:14px;
+                font-weight: bold;
+            }
+
+        fieldset{
+            display: flex;
+            flex-direction: column;
+        }
+
+        tr{
+                margin-top: 10px;
+                display: flex;
+                flex-direction: row;
+                justify-content:space-between;
+                
+            }
+
+        td.error_message{
+            color: red;
+            font-size: small;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"]{
+            height: 15px;
+            width: 170px;
+        }
+
+        button{
+            font-weight: bold;
+            height: 23px;
+            width: 27px;
+            }
+            
+        @media screen and (min-width:814px) {
+            form{
+                width: 25%;
+            }
+
+            span{
+                font-size: x-large;
+            }
+
+            table{
+                font-size: large;
+            }
+
+            td.error_message{
+            font-size: medium;
+            position: relative;
+        }
+        }
+
+    </style>
+    <script>
+        function validate()
+        {
+            var found_error = false;
+            var name = document.getElementById("my_name").value;
+            var mail = document.getElementById("my_email").value;
+            var phone = document.getElementById("my_phone").value;
+            var name_pattern = /^[A-Za-z]+(?:\s[A-Za-z]+)+$/;
+            var mail_pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z.-]+\\.[a-zA-Z]{2,}$/;
+            var phone_pattern = /^[6-9]\\d{9}$/;
+            if(name == "" || name == null)
+            {
+                document.getElementById("name_error").innerHTML = "Full name required.";
+                found_error = true;
+            }
+            else
+            {
+                if(name_pattern.test(name) == false);
+                {
+                    document.getElementById("name_error").innerHTML = "Error: Invalid name format.";
+                    found_error = true;
+                }
+            }
+
+            if(mail == "" || name == null)
+            {
+                document.getElementById("mail_error").innerHTML = "Email required.";
+                found_error = true;
+            }
+            else
+            {
+                if(mail_pattern.test(name) == false);
+                {
+                    document.getElementById("mail_error").innerHTML = "Error: Invalid mail format.";
+                    found_error = true;
+                }
+            }
+            
+            if(phone == "" || phone == null)
+            {
+                document.getElementById("phone_error").innerHTML = "Phone number required.";
+                found_error = true;
+            }
+            else
+            {
+                if(phone_pattern.test(name) == false);
+                {
+                    document.getElementById("phone_error").innerHTML = "Error: Invalid phone format.";
+                    found_error = true;
+                }
+            }
+
+            if(found_error)
+            {
+                return false;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <center>
+        <form action="" onsubmit="return validate()" method="post">
+            <fieldset>
+                <span>
+                    <legend>Validation Form</legend>
+                </span>
+                <table>
+                    <tr>
+                        <th><label for="my_name">Full Name : </label></th>
+                        <td><input type="text" id="my_name"></td>
+                    </tr>  
+                    <tr>
+                        <th></th>
+                        <td class="error_message" id="name_error"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="my_email">Email : </label></th>
+                        <td><input type="email" id="my_email"></td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td class="error_message" id="mail_error"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="my_phone">Phone number : </label></th>
+                        <td><input type="tel" id="my_phone"></td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td class="error_message" id="phone_error"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="submit" style="width: 62px;">Submit</button>
+                        </td>
+                        <td>
+                            <button type="reset" style="width: 54px;">Clear</button>
+                        </td>
+                    </tr>                 
+                </table>
+            </fieldset>
+        </form>
+    </center>
+</body>
+</html>

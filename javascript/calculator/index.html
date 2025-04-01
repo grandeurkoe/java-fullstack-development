@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        form{
+            width: 55%;
+        }
+
+        fieldset{
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+
+        span{
+            font-size: large;
+            font-weight: bold;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        table{
+                width: 100%;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-size:14px;
+                font-weight: bold;
+            }
+
+        fieldset{
+            display: flex;
+            flex-direction: column;
+        }
+
+        tr{
+                margin-top: 10px;
+                display: flex;
+                flex-direction: row;
+                justify-content:center;
+            }
+
+        td{
+            margin-left: 20px;
+        }
+
+        input[type="text"]{
+            height: 15px;
+            width: 150px;
+        }
+
+        button{
+            font-weight: bold;
+            height: 23px;
+            width: 27px;
+            }
+            
+        @media screen and (min-width:814px) {
+            form{
+                width: 25%;
+            }
+
+            span{
+                font-size: x-large;
+            }
+
+            table{
+                font-size: large;
+            }
+        }
+
+    </style>
+    <script>
+        function calculator(operation)
+        {
+            var first_number = parseFloat(document.getElementById("first").value);
+            var second_number = parseFloat(document.getElementById("second").value);
+            var answer = document.getElementById('result')
+            switch(operation)
+            {
+                case '+': 
+                answer.value = first_number + second_number;
+                break;
+                case '-': 
+                answer.value = first_number - second_number;
+                break;
+                case '*': 
+                answer.value = first_number * second_number;
+                break;
+                case '/': 
+                if(second_number == 0)
+                {
+                    answer.value = "Can't divide by 0."
+                }
+                else
+                {
+                    answer.value = first_number / second_number;
+                }
+                break;
+                case '%': 
+                if(second_number == 0)
+                {
+                    answer.value = "Can't divide by 0."
+                }
+                else
+                {
+                    answer.value = first_number % second_number;
+                }                
+                break;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <center>
+        <form action="">
+            <fieldset>
+                <span>
+                    <legend>Calculator</legend>
+                </span>
+                <table>
+                    <tr>
+                        <th><label for="first">Number 1: </label></th>
+                        <td><input type="text" id="first" required></td>
+                    </tr>
+                    <tr>
+                        <th><label for="second">Number 2: </label></th>
+                        <td><input type="text" id="second" required></td>
+                    </tr>    
+                    <tr>
+                        <th><label for="result">Result : </label></th>
+                        <td style="margin-left: 35px;"><input type="text" id="result" disabled></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Pick an operation: </label></td>
+                        <td>
+                            <button type="button" onclick="calculator('+')">+</button>
+                            <button type="button" onclick="calculator('-')">-</button>
+                            <button type="button" onclick="calculator('*')">*</button>
+                            <button type="button" onclick="calculator('/')">/</button>
+                            <button type="button" onclick="calculator('%')">%</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button type="reset" style="width: 54px;">Clear</button>
+                        </td>
+                    </tr>                 
+                </table>
+            </fieldset>
+        </form>
+    </center>
+</body>
+</html>
