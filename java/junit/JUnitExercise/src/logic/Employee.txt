@@ -1,0 +1,42 @@
+### Exercise 3
+
+#### Scenario
+You have been assigned a task of creating an application that enables the employees of an organization to mark their attendance and apply for leaves. You divide the application into three modules: login, attendance, and leaves.
+
+1. **Testing Individual Modules**:
+   These modules have been developed by individual developers. Now, each of these modules needs to be tested before they are integrated together in the application. Which testing level will you use to test the modules individually? Justify your answer.
+
+2. **Testing the Integrated Application**:
+   Next, you need to integrate these modules and test the complete application. Which testing level and approach will you use to test the application? Justify your answer.
+
+### Answers
+
+1. **Testing Individual Modules**
+
+   **Testing Level**: Unit Testing
+
+   **Justification**:
+   - **Unit Testing** is the process of testing individual components or modules of an application in isolation from the rest of the application. This is appropriate because each module (login, attendance, and leaves) has been developed independently and should be tested to ensure they function correctly on their own.
+   - Unit tests are typically written and executed by developers. They help identify and fix bugs at an early stage, ensuring that each module behaves as expected before integration.
+   - Tools such as JUnit (for Java) or NUnit (for .NET) can be used to automate unit testing.
+
+2. **Testing the Integrated Application**
+
+   **Testing Level**: Integration Testing, System Testing, and Acceptance Testing
+
+   **Justification**:
+   - **Integration Testing**: This level of testing is essential after combining the individual modules. The goal is to ensure that the modules interact correctly and work together as intended. This involves testing the interfaces between the modules to identify issues such as data flow problems, interface mismatches, and other integration errors.
+     - Example: Ensuring that the login module correctly passes user authentication data to the attendance and leaves modules.
+   - **System Testing**: Once the integration testing is complete, the entire application should be tested as a whole. System testing involves testing the complete and fully integrated software product to evaluate the system's compliance with the specified requirements.
+     - This includes functional testing (verifying that the application meets its functional requirements) and non-functional testing (performance, usability, security, etc.).
+   - **Acceptance Testing**: This is the final level of testing performed to ensure that the application meets the business requirements and is ready for deployment. It involves testing the application from the end-users' perspective.
+     - User Acceptance Testing (UAT) is typically conducted by the end-users or clients to validate the application's functionality, performance, and overall user experience.
+
+   **Approach**:
+   - **Test Planning**: Define the scope, objectives, resources, schedule, and deliverables for each testing level.
+   - **Test Design**: Create test cases and scenarios based on the requirements and specifications.
+   - **Test Execution**: Execute the test cases and log the results. Identify and document any defects found.
+   - **Defect Management**: Track and manage the defects found during testing, ensuring they are resolved before moving to the next testing level.
+   - **Test Reporting**: Provide detailed reports on the testing progress, results, and any risks or issues identified.
+
+By following this structured approach, you can ensure that each module works correctly both independently and as part of the integrated application, ultimately delivering a reliable and functional product to the end-users.
