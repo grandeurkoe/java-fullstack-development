@@ -1,0 +1,9 @@
+.myDescription {
+    display: flex;
+    gap: 200px;
+    justify-content: center;
+}
+
+p {
+    font-style: italic;
+}

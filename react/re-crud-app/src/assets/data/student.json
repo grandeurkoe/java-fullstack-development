@@ -1,0 +1,22 @@
+{
+  "student": [
+    {
+      "id": "1",
+      "studname": "Rahul",
+      "emailid": "rahulm@gmail.com",
+      "cellno": "987654124"
+    },
+    {
+      "id": "2",
+      "studname": "Meena",
+      "emailid": "meena@gmail.com",
+      "cellno": "987654351"
+    },
+    {
+      "id": "3",
+      "studname": "Ram",
+      "emailid": "ram@gmail.com",
+      "cellno": "987654348"
+    }
+  ]
+}

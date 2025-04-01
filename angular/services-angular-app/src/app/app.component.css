@@ -1,0 +1,22 @@
+h1 {
+    text-align: center;
+}
+
+table {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+tr {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.calculateButtons {
+    margin-top: 15px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}

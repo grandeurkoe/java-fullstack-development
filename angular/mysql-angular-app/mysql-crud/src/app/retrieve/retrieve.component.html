@@ -1,0 +1,19 @@
+<h2>View Customer</h2>
+<div>
+  <table>
+      <tr style="font-weight: bold;">
+        <td>ID</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Email</td>
+        <td>Cell No.</td>
+      </tr>
+      <tr *ngFor = "let c of customerData">
+        <td>{{c.custid}}</td>
+        <td>{{c.firstname}}</td>
+        <td>{{c.lastname}}</td>
+        <td>{{c.email}}</td>
+        <td>{{c.cellno}}</td>
+      </tr>
+    </table>  
+</div>

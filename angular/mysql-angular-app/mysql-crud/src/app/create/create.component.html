@@ -1,0 +1,32 @@
+<h2>Create Customer</h2>
+<div>
+    <form #custForm="ngForm" (ngSubmit)="saveFormData(custForm)">
+        <table>
+            <tr>
+                <td>ID: </td>
+                <td><input type="text" name="id" id="id" #id="ngModel" ngModel/></td>
+            </tr>
+            <tr>
+                <td>First Name: </td>
+                <td><input type="text" name="firstname" id="fname" #firstname="ngModel" ngModel/></td>
+            </tr>
+            <tr>
+                <td>Last Name: </td>
+                <td><input type="text" name="lastname" id="lastname" #lastname="ngModel" ngModel/></td>
+            </tr>
+            <tr>
+                <td>Email: </td>
+                <td><input type="text" name="email" id="email" #email="ngModel" ngModel/></td>
+            </tr>
+            <tr>
+                <td>Cell No.</td>
+                <td><input type="text" name="cellno" id="cellno" #cellno="ngModel" ngModel/></td>
+            </tr>        
+            <tr>
+                <td><button type="submit">Save</button></td>
+                <td></td>
+            </tr>
+        </table>        
+    </form>
+
+</div>

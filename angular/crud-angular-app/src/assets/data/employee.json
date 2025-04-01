@@ -1,0 +1,32 @@
+{
+  "employees": [
+    {
+      "id": "1",
+      "firstname": "Vishal",
+      "lastname": "Kushwaha",
+      "designation": "Manager",
+      "salary": "40000"
+    },
+    {
+      "id": "2",
+      "firstname": "Meena",
+      "lastname": "Devi",
+      "designation": "Supervisor",
+      "salary": 45000
+    },
+    {
+      "id": "3",
+      "firstname": "Shriram",
+      "lastname": "Kushwaha",
+      "designation": "Sales Executive",
+      "salary": 25000
+    },
+    {
+      "id": "4",
+      "firstname": "Shweta",
+      "lastname": "Kumari",
+      "designation": "Sales Executive",
+      "salary": "25000"
+    }
+  ]
+}

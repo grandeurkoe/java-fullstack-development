@@ -1,0 +1,14 @@
+.imgContainer {
+    display: flex;
+    flex-direction:column;
+}
+
+.myImages {
+    display: flex;
+    gap: 800px;
+    justify-content: center;
+}
+
+img {
+    height: 200px;
+}

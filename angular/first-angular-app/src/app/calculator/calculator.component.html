@@ -1,0 +1,24 @@
+<h4>Calculator</h4>
+<ul>
+    <li>{{numberOne}} + {{numberTwo}} = {{numberOne + numberTwo}}</li>
+    <li>{{numberOne}} - {{numberTwo}} = {{numberOne - numberTwo}}</li>
+    <li>{{numberOne}} * {{numberTwo}} = {{numberOne * numberTwo}}</li>
+    <li>{{numberOne}} / {{numberTwo}} = {{numberOne / numberTwo}}</li>
+    <li>{{numberOne}} % {{numberTwo}} = {{numberOne % numberTwo}}</li>    
+</ul>
+<hr />
+<h4>Event Binding</h4>
+Number 1: <input type="text" [value] = "numberOne" id="numberOne" /><br /><br />
+Number 2: <input type="text" [value] = "numberOne" id="numberOne" /><br /><br />
+<button id="addButton" (click)="addition()">Add</button><br /><br />
+Result: <input type="text" [value] = "result" id="result" disabled/>
+<hr />
+<h4>Two Way Data Binding</h4>
+Number 1: <input type="text"  id="numberOne" name="textBoxOne" [(ngModel)]="numberOne"/><br /><br />
+Number 2: <input type="text"  id="numberOne" name="textBoxOne" [(ngModel)]="numberTwo"/><br /><br />
+<button id="addButton" (click)="additionAgain()">+</button>
+<button id="subtractButton" (click)="subtraction()">-</button>
+<button id="divideButton" (click)="division()">/</button>
+<button id="multiplyButton" (click)="multiplication()">*</button>
+<button id="moduloButton" (click)="modulo()">%</button><br /><br />
+Result: <input type="text"  id="resultTwo" name="textBoxThree" [(ngModel)]="resultTwo" disabled/>

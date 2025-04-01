@@ -1,0 +1,39 @@
+<h1>Angular Pipes</h1>
+<hr />
+<h2>Date</h2>
+<p>medium: {{toDate | date: 'medium'}}</p>
+<p>short: {{toDate | date: 'short'}}</p>
+<p>fullDate: {{toDate | date: 'fullDate'}}</p>
+<p>longDate: {{toDate | date: 'longDate'}}</p>
+<p>mediumDate: {{toDate | date: 'mediumDate'}}</p>
+<p>shortDate: {{toDate | date: 'shortDate'}}</p>
+<p>mediumTime: {{toDate | date: 'mediumTime'}}</p>
+<p>dd-MM-y: {{toDate | date: 'dd-MM-y'}}</p>
+<p>dd-MM-yy: {{toDate | date: 'dd-MM-yy HH:mm'}}</p>
+<hr />
+<h2>String</h2>
+<p>Original String: {{myMessage}}</p>
+<p>Uppercase: {{myMessage | uppercase}}</p>
+<p>Lowercase: {{myMessage | lowercase}}</p>
+<p>Slice (11 to 20): {{myMessage | slice:11:20}}</p>
+<p>Another Slice (-9): {{myMessage | slice:-9}}</p>
+<hr />
+<h2>Decimal</h2>
+<p>Unformatted number: {{myNumber}}</p>
+<p>Formatted number: {{myNumber | number}}</p>
+<p>Formatted number: {{myNumber | number:'5.1-2'}}</p>
+<p>Formatted number: {{myNumber | number:'7.1-5'}}</p>
+<hr />
+<h2>Percent</h2>
+<p>Unformatted number: {{myPercent}}</p>
+<p>Formatted number: {{myPercent | percent}}</p>
+<p>Formatted number: {{myPercent | percent:'1.1-2'}}</p>
+<hr />
+<h2>Currency</h2>
+<p>Unformatted: {{myCurrency}}</p>
+<p>Formatted (in dollars): {{myCurrency | currency}}</p>
+<p>Formatted (in rupees): {{myCurrency | currency:'INR':true:'4.2-2'}}</p>
+<hr />
+<h2>Custom Pipe</h2>
+<p>Unformatted: {{myNewMessage}}</p>
+<p>Formatted: {{myNewMessage | titlecase}}</p>

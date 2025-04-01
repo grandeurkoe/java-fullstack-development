@@ -1,0 +1,28 @@
+<h1>Assignment No. 1</h1>
+<hr />
+<h2 [ngStyle] = "{'color': selectedForeground, 'background-color': selectedBackground}">I love change!</h2>
+<div class="controller">
+  <div>
+    <label for="foreground">Foreground color: </label>
+    <select id="foreground" (change)="onChangeForeground($event)">
+      <option value="#000000">Black</option>
+      <option value="#006400">Dark Green</option>
+      <option value="#333333">Dark Gray</option>
+      <option value="#FFFFFF">White</option>
+      <option value="#1E3A5F">Deep Blue</option>
+      <option value="#8B4513">Dark Brown</option>
+    </select>
+  </div>
+  
+  <div>
+    <label for="background">Background color: </label>
+    <select id="background" (change)="onChangeBackground($event)">
+      <option value="#FFFFFF">White</option>
+      <option value="#90EE90">Light Green</option>
+      <option value="#D3D3D3">Light Gray</option>
+      <option value="#FFA500">Bright Orange</option>
+      <option value="#ADD8E6">Light Blue</option>
+      <option value="#F5F5DC">Light Beige</option>
+    </select>
+  </div>
+</div>

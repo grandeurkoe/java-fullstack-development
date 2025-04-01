@@ -1,0 +1,6 @@
+.myStudents, .myEmployees {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}

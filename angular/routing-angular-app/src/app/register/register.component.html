@@ -1,0 +1,95 @@
+<h1>Template-Driven Form</h1>
+<hr />
+<form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+    <table>
+        <tr>
+            <td>
+                <label for="fname">First Name:</label>
+            </td>
+            <td>
+                <input type="text" name="fname" id="fname" ngModel #fname="ngModel" required minlength="3"/>
+            </td>
+            <td>
+                <div *ngIf="fname.touched && fname.invalid">
+                    <span *ngIf="fname.errors?.['required']">First Name field should not be blank!</span>
+                    <span *ngIf="fname.errors?.['minlength']">First Name field should be atleast 3 characters!</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="lname">Last Name:</label>
+            </td>
+            <td>
+                <input type="text" name="lname" id="lname" ngModel #lname="ngModel" required minlength="5"/>
+            </td>
+            <td>
+                <div *ngIf="lname.touched && lname.invalid">
+                    <span *ngIf="lname.errors?.['required']">Last Name field should not be blank!</span>
+                    <span *ngIf="lname.errors?.['minlength']">Last Name field should be atleast 5 characters!</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="email">Email ID:</label>
+            </td>
+            <td>
+                <input type="text" name="email" id="email" ngModel #email="ngModel" required email/>
+            </td>
+            <td>
+                <div *ngIf="email.touched && email.invalid">
+                    <span *ngIf="email.errors?.['required']">Email Field should not be blank!</span>
+                    <span *ngIf="email.errors?.['email']">Invalid Email!</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="phone">Phone No.:</label>
+            </td>
+            <td>
+                <input type="text" name="phone" id="phone" ngModel required #phoneno="ngModel"/>
+            </td>
+            <td>
+                <div *ngIf="phoneno.touched && phoneno.invalid">
+                    <span *ngIf="phoneno.errors?.['required']">Phone Field should not be blank!</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="gender">Gender</label>
+            </td>
+            <td>
+                <input type="radio" name="gender" id="male" value="male" ngModel/>Male
+                <input type="radio" name="gender" id="female" value="female" ngModel/>Female
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="isMarried">Is Married?</label>
+            </td>
+                <input type="checkbox" name="isMarried" id="isMarried" ngModel/>    
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="city">City</label>
+            </td>
+            <td>
+                <select name="city" ngModel>
+                    <option *ngFor="let ct of city">{{ct}}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>     
+            <td>
+                <input type="reset" value="Reset"/>
+                <input type="submit" value="Submit"/>
+            </td>
+        </tr>
+    </table>
+</form>

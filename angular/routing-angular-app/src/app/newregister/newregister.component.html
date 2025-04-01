@@ -1,0 +1,62 @@
+<h1>Reactive Form</h1>
+<hr/>
+<form [formGroup] = "regForm" (ngSubmit) = "register()">
+    <table>
+        <tr>
+            <td>First Name: </td>
+            <td><input type="text" name="firstName" id="firstName" formControlName="firstName"/></td>
+            <td>
+                <div *ngIf="regForm.get('firstName') && regForm.get('firstName')?.touched && regForm.get('firstName')?.invalid">
+                    <span *ngIf="regForm.get('firstName')?.errors?.['required']">First Name Field should not be blank!</span>
+                    <span *ngIf="regForm.get('firstName')?.errors?.['minlength']">First Name Field should be greater than 2 characters!</span>
+                    <span *ngIf="regForm.get('firstName')?.errors?.['maxlength']">First Name Field should be less than 11 characters!</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Last Name: </td>
+            <td><input type="text" name="lastName" id="lastName" formControlName="lastName"/></td>
+            <td>
+                <div *ngIf="regForm.get('lastName') && regForm.get('lastName')?.touched && regForm.get('lastName')?.invalid">
+                    <span *ngIf="regForm.get('lastName')?.errors?.['required']">Last Name Field should not be blank!</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Email ID: </td>
+            <td><input type="text" name="emailId" id="emailId" formControlName="emailId"/></td>
+            <td>
+                <div *ngIf="regForm.get('emailId') && regForm.get('emailId')?.touched && regForm.get('emailId')?.invalid">
+                    <span *ngIf="regForm.get('emailId')?.errors?.['required']">Email ID Field should not be blank!</span>
+                    <span *ngIf="regForm.get('emailId')?.errors?.['email']">Email ID should be in correct format!</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Mobile No.: </td>
+            <td><input type="text" name="mobileNo" id="mobileNo" formControlName="mobileNo"/></td>
+            <td>
+                <div *ngIf="regForm.get('mobileNo') && regForm.get('mobileNo')?.touched && regForm.get('mobileNo')?.invalid">
+                    <span *ngIf="regForm.get('mobileNo')?.errors?.['required']">Mobile Number Field should not be blank!</span>
+                    <span *ngIf="regForm.get('mobileNo')?.errors?.['pattern']">Mobile Number should be correct format!</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Age: </td>
+            <td><input type="number" name="age" id="age" formControlName="age"/></td>
+            <td>
+                <div *ngIf="regForm.get('age') && regForm.get('age')?.touched && regForm.get('age')?.invalid">
+                    <span *ngIf="regForm.get('age')?.errors?.['min']">Age Field should not be less than 18!</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>     
+            <td>
+                <input type="reset" value="Reset"/>
+                <input type="submit" value="Submit" style="margin-left: 10px;"/>
+            </td>
+        </tr>
+    </table>
+</form>

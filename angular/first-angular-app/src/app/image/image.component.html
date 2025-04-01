@@ -1,0 +1,12 @@
+<h4>Profile Image</h4>
+<!-- One Way Binding - Property Binding -->
+<!-- <img [src]="imageFront" height="150px"/>
+<img [src]="imageBack" height="150px"/> -->
+<!-- Structural Directive -->
+<div *ngFor = "let image of allImages" style="display: inline-block;">
+    <img [src]="image" height="150px"/>
+</div>
+<br />
+<ul>
+    <li *ngFor = "let ct of cityName">{{ct}}</li>
+</ul>

@@ -1,0 +1,6 @@
+<h3>*ngIf directive</h3>
+<div *ngIf = "myClassName == 'DVOC'; then dvoc; else default"></div>
+<ng-template #dvoc>
+    <div [ngStyle] = "{'background-color': backgroundColor}">My class name is DVOC.</div>
+</ng-template>
+<ng-template #default>My class name is not DVOC.</ng-template>

@@ -1,0 +1,16 @@
+h1 {
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+a {
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 600;
+    font-size: large;
+    text-decoration: none;
+}

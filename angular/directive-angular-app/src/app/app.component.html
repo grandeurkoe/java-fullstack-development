@@ -1,0 +1,56 @@
+<h1>Angular Directives</h1>
+<hr />
+<h2>Structural Directives</h2>
+<div class="ngFor">
+  <div>
+    <h3>*ngFor directive</h3>
+    <table>
+      <tr>
+        <th>Roll No.</th>
+        <th>Name</th>
+        <th>Course</th>
+        <th>Fees</th>
+      </tr>
+      <tr *ngFor = "let student of studentList">
+        <td>{{student.rollNo}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.course}}</td>
+        <td>{{student.fees}}</td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <h3>*ngFor directive (Nested)</h3>
+    <table>
+      <tr>
+        <th>Emp No.</th>
+        <th>Emp Name</th>
+        <th>Skills</th>
+      </tr>
+      <tr *ngFor = "let emp of employeeList">
+        <td>{{emp.empNo}}</td>
+        <td>{{emp.empName}}</td>
+        <td>
+          <table>
+            <tr>
+              <td>Skill ID</td>
+              <td>Skill</td>
+              <td>Experience</td>
+            </tr>
+            <tr *ngFor = "let sk of emp.skills">
+              <td>{{sk.skillId}}</td>
+              <td>{{sk.skill}}</td>
+              <td>{{sk.exp}}</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <h3>*ngFor directive (Product Class)</h3>
+    <app-product></app-product>    
+  </div>
+</div>
+<app-switch></app-switch>
+<app-if></app-if>

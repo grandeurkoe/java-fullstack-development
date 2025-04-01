@@ -1,0 +1,29 @@
+<h1>Angular Services</h1>
+<hr />
+<h2>Calculator Service</h2>
+<div class="calculatorService">
+  <table>
+    <tr>
+      <td>Number 1: </td>
+      <td><input type="text" name="firstNumber" [(ngModel)] = "numberOne"></td>
+    </tr>
+    <tr>
+      <td>Number 2: </td>
+      <td><input type="text" name="secondNumber" [(ngModel)] = "numberTwo"></td>
+    </tr>
+    <tr>
+      <td>Result: </td>
+      <td style="margin-left: 25px;"><input type="text" name="result" [(ngModel)] = "result"></td>
+    </tr>
+  </table>
+  <div class="calculateButtons">
+    <button (click)="add()">Add</button>
+    <button (click)="multiply()">Multiply</button>
+    <button (click)="subtract()">Subtract</button>
+    <button (click)="divide()">Divide</button>
+  </div>  
+</div>
+<br />
+<hr />
+
+
