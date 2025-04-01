@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Day 05 Homework--&gt; Order Food Online</title>
+        <style>
+            label {
+                font-size: 15px;
+            }
+            input {
+                height: 20px;
+            }
+            select{
+                height: 20px;
+            }
+            td{
+                padding-bottom: 1rem;
+                padding-right: 4rem;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <form>
+                <fieldset style="width: 25%; background-color: saddlebrown; border: 2px solid black;">
+                    <span>
+                        <legend align="center" style="color:coral; font-size: 25px;">OrderFoodOnline</legend>
+                    </span>
+                    <table>
+                        <tr>
+                            <td class="style_label">
+                                <label name="name">Name:</label>
+                            </td>
+                            <td>
+                                <input type="text" placeholder="Enter your name">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style_label">
+                                <label name="date">Date:</label>
+                            </td>
+                            <td>
+                                <input type="date">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style_label">
+                                <label name="email">Email ID:</label>
+                            </td>
+                            <td>
+                                <input type="email" placeholder="Enter your email ID">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style_label">
+                                <label name="contact">Contact Number:</label>
+                            </td>
+                            <td>
+                                <input type="tel" placeholder="Enter your phone number">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style_label">
+                                <label>Select Food:</label>
+                            </td>
+                            <td>
+                                <label>Non-vegetarian</label>
+                                <input type="checkbox" name="food">&nbsp;
+                                <label>Vegetarian</label>
+                                <input type="checkbox" name="food">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style_label">
+                                <label>Select Restaurant:</label>
+                            </td>
+                            <td>
+                                <select name="restaurant">
+                                    <option value="">Select Your Restaurants</option>
+                                    <option value="">SpiceFusion Bistro</option>
+                                    <option value="">Coastal Harvest Grill</option>
+                                    <option value="">Urban Eats Haven</option>
+                                    <option value="">Fireside Tavern & Grill</option>
+                                    <option value="">SavorCraft Kitchen</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style_label">
+                                <label>Drinks:</label>
+                            </td>
+                            <td>
+                                <select name="drinks">
+                                    <option value="">Select Your Drinks</option>
+                                    <option value="">Tropical Sunset Bliss</option>
+                                    <option value="">Midnight Mocha Madness</option>
+                                    <option value="">Berry Breeze Cooler</option>
+                                    <option value="">Citrus Spark Spritzer</option>
+                                    <option value="">Caramel Apple Delight</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style_label">
+                                <label>Soups:</label>
+                            </td>
+                            <td>
+                                <select name="soup">
+                                    <option value="">Select the Soup of Your Choice</option>
+                                    <option value="">Creamy Roasted Basil Soup</option>
+                                    <option value="">Spicy Thai Coconut Soup</option>
+                                    <option value="">Hearty Lentil Soup</option>
+                                    <option value="">Classic French Onion Soup</option>
+                                    <option value="">Smoky Black Bean Soup</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style_label">
+                                <label>Dishes:</label>
+                            </td>
+                            <td>
+                                <select name="soup">
+                                    <option value="">Select the Dishes of Your Choice</option>
+                                    <option value="">Mini Caprese Skewers</option>
+                                    <option value="">Tiny Tuna Tartare Bites</option>
+                                    <option value="">Miniature Meatball Sliders</option>
+                                    <option value="">Bite-sized Chicken Satay Skewers</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style_label">
+                                <label>Order For:</label>
+                            </td>
+                            <td>
+                                <label>Take Away</label>
+                                <input type="radio" name="mode">&nbsp;
+                                <label>Home Delivery</label>
+                                <input type="radio" name="mode">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style_label">
+                                <label>Address:</label>
+                            </td>
+                            <td>
+                                <textarea name="address" placeholder="Enter Your Address Here"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style_label">
+                                <label>State:</label>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" colspan="2">
+                                <input type="submit" value="Submit">&emsp;&emsp;&emsp;&emsp;
+                                <input type="reset" value="Reset">
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
+        </center>
+    </body>
+</html>
