@@ -24,7 +24,7 @@ build/
 # Logs
 *.log
 
-# Dependency directories
+# Dependency directories (Node.js dependencies)
 node_modules/
 
 # IntelliJ IDEA specific files
@@ -34,26 +34,21 @@ out/
 # VS Code
 .vscode/
 
-# NPM / Yarn related
+# NPM / Yarn related files
 package-lock.json
 yarn.lock
 
-# Angular / React
-# Build output
-/dist
-/build
-
-# Angular-specific
+# Angular-specific build directories
+angular/node_modules/
 angular/dist/
 angular/.angular/
+angular/build/
 
-# React-specific
+# React-specific build directories
+react/node_modules/
 react/build/
 react/.next/
 react/out/
-
-# Node.js
-node_modules/
 
 # Operating System-specific files
 .DS_Store
@@ -71,8 +66,8 @@ Desktop.ini
 # Compiled JavaScript
 *.js.map
 
-# TypeScript
+# TypeScript build info
 *.tsbuildinfo
 
-# .env file
+# Environment variables file
 .env
