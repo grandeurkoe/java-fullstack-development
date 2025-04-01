@@ -1,0 +1,78 @@
+# Java / Backend - General
+
+# Eclipse and IntelliJ IDEA project files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse metadata
+.project
+.classpath
+.settings/
+
+# Maven
+target/
+
+# Gradle
+.gradle/
+build/
+
+# Java bytecode files
+*.class
+
+# Logs
+*.log
+
+# Dependency directories
+node_modules/
+
+# IntelliJ IDEA specific files
+out/
+.idea/
+
+# VS Code
+.vscode/
+
+# NPM / Yarn related
+package-lock.json
+yarn.lock
+
+# Angular / React
+# Build output
+/dist
+/build
+
+# Angular-specific
+angular/dist/
+angular/.angular/
+
+# React-specific
+react/build/
+react/.next/
+react/out/
+
+# Node.js
+node_modules/
+
+# Operating System-specific files
+.DS_Store
+Thumbs.db
+
+# JetBrains IDE folders
+.idea/
+
+# Windows Installer files
+Thumbs.db
+
+# OS-specific directories
+Desktop.ini
+
+# Compiled JavaScript
+*.js.map
+
+# TypeScript
+*.tsbuildinfo
+
+# .env file
+.env
