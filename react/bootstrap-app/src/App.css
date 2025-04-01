@@ -1,0 +1,14 @@
+h1, h2 {
+    text-align: center;
+}
+
+.myButtons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.myCards {
+    display: flex;
+    justify-content: center;
+}
