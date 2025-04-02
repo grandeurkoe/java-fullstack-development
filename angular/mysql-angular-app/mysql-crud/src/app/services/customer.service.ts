@@ -15,6 +15,6 @@ export class CustomerService {
   }
 
   saveCustomer(custData: any) {
-    return this.httpRouter.post(this.baseUrl + "/api/customer/create", custData);
+    return this.httpRouter.post(this.baseUrl + "/api/customer/save", custData);
   }
 }
