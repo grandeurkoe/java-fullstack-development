@@ -17,4 +17,12 @@ export class CustomerService {
   saveCustomer(custData: any) {
     return this.httpRouter.post(this.baseUrl + "/api/customer/save", custData);
   }
+
+  deleteCustomer(id: any) {
+    return this.httpRouter.delete(this.baseUrl + "/api/customer/delete/" + id);
+  }
+
+  updateCustomer(id: any, body: any) {
+    return this.httpRouter.put(this.baseUrl + "/api/customer/edit/" + id, body);
+  }
 }
