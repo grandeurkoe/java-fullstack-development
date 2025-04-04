@@ -14,10 +14,16 @@ const db = mysql.createConnection({
 });
 
 // Use the CORS middleware globally
-server.use(cors()); // Allow all origins by default
+server.use(cors({
+    origin: 'http://localhost:4200',  // Allow requests only from Angular frontend
+    methods: ['GET', 'POST', 'DELETE', 'PUT'],
+    allowedHeaders: ['Content-Type']
+  }));
 
 // Parse incoming request bodies (for JSON)
 server.use(express.json());  // This is a built-in middleware for parsing JSON
+
+server.use(bodyParser.json());
 
 // Check if successfully connected to the database.
 db.connect(function(err) {
@@ -69,6 +75,28 @@ server.post('/api/customer/save', (req, res) => {
             console.log(error);
         } else {
             res.status(200).send({ status: true, message: "Customer created successfully!" });
+        }
+    });
+});
+
+// Delete customer data from MySQL database.
+server.delete("/api/customer/delete/:id", (req, res) => {
+    const customerId = req.params.id;  // Get the customer ID from the URL parameter
+
+    // Use parameterized query to avoid SQL injection
+    var delqr = "DELETE FROM customer WHERE custid = ?";
+    
+    db.query(delqr, [customerId], (err, result) => {
+        if (err) {
+            res.status(500).send({ status: false, message: "Customer deletion failed!" });
+            console.log(err);
+        } else {
+            // Check if a row was affected (customer was deleted)
+            if (result.affectedRows > 0) {
+                res.status(200).send({ status: true, message: "Customer deleted successfully!" });
+            } else {
+                res.status(404).send({ status: false, message: "Customer not found!" });
+            }
         }
     });
 });

@@ -22,4 +22,23 @@ export class RetrieveComponent implements OnInit {
       }
     });
   }
+
+  deleteCustomer(custid: any) {
+    this.customerService.deleteCustomer(custid).subscribe(
+      (data: any) => {  // Cast response to 'any'
+        if (data.status === true) {
+          alert(data.message);  // Success message
+          this.ngOnInit();  // Re-fetch the customer data after deletion
+        } else {
+          alert('Failed to delete the customer: ' + data.message);
+        }
+      },
+      (error) => {
+        console.error('Error deleting customer:', error);
+        alert('An error occurred while deleting the customer');
+      }
+    );
+  }
+  
+
 }

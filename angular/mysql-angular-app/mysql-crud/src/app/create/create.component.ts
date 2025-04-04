@@ -16,7 +16,7 @@ export class CreateComponent {
     this.cust.saveCustomer(custFormData.value).subscribe(data => {
       this.custNewData = data;
       console.log(this.custNewData);
-      alert("Data Saved Successfully");
+      alert("Customer Created Successfully");
     })
   }
 }
