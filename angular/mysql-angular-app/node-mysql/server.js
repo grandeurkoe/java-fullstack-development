@@ -100,3 +100,28 @@ server.delete("/api/customer/delete/:id", (req, res) => {
         }
     });
 });
+
+// Update customer data from MySQL database.
+server.put("/api/customer/edit/:id", (req, res) => {
+    // Use placeholders (?) for parameters to avoid SQL injection
+    var editqr = "UPDATE customer SET firstname = ?, lastname = ?, email = ?, cellno = ? WHERE custid = ?";
+
+    // Prepare the values for the placeholders
+    var values = [
+        req.body.firstname,
+        req.body.lastname,
+        req.body.email,
+        req.body.cellno,
+        req.params.id
+    ];
+
+    // Execute the query with parameterized values
+    db.query(editqr, values, (error, result) => {
+        if (error) {
+            res.status(500).send({ status: false, message: "Customer updation failed!" });
+            console.log(error);
+        } else {
+            res.status(200).send({ status: true, message: "Customer updated successfully!" });
+        }
+    });
+});

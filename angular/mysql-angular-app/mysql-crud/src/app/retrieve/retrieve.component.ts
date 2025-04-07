@@ -39,6 +39,9 @@ export class RetrieveComponent implements OnInit {
       }
     );
   }
+
+  editCustomer(custid: any) {
+  }
   
 
 }
