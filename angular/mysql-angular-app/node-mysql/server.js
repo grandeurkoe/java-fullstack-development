@@ -57,6 +57,26 @@ server.get('/api/customer/getall', (req, res) => {
     });
 });
 
+// Get customer by ID from MySQL database.
+server.get('/api/customer/get/:id', (req, res) => {
+    const customerId = req.params.id;  // Get the customer ID from the URL parameter
+
+    var qr = "SELECT * FROM customer WHERE custid = ?";
+
+    db.query(qr, [customerId], (err, result) => {
+        if (err) {
+            res.status(500).send("Error: " + err);
+        } else {
+            if (result.length > 0) {
+                res.status(200).send({ status: "OK", data: result });
+            } else {
+                res.status(404).send({ status: "Not Found", message: "Customer not found!" });
+            }
+        }
+    });
+});
+
+
 // Save customer data to MySQL database.
 server.post('/api/customer/save', (req, res) => {
     let customerData = {

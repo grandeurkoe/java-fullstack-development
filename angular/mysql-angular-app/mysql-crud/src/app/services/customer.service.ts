@@ -14,6 +14,10 @@ export class CustomerService {
     return this.httpRouter.get(this.baseUrl + "/api/customer/getall");
   }
 
+  getCustomerById (id: any) {
+    return this.httpRouter.get(this.baseUrl  + "/api/customer/get/" + id);
+  }
+
   saveCustomer(custData: any) {
     return this.httpRouter.post(this.baseUrl + "/api/customer/save", custData);
   }

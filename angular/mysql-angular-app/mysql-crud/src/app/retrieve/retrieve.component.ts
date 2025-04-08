@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../services/customer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-retrieve',
@@ -9,7 +10,7 @@ import { CustomerService } from '../services/customer.service';
 export class RetrieveComponent implements OnInit {
   customerData: any[] = [];
 
-  constructor(private customerService: CustomerService) {}
+  constructor(private customerService: CustomerService, private updateRoute: Router) {}
 
   ngOnInit(): void {
     // Fetch the customer data when the component initializes
@@ -41,7 +42,7 @@ export class RetrieveComponent implements OnInit {
   }
 
   editCustomer(custid: any) {
+    this.updateRoute.navigateByUrl("/update/" + custid);
   }
   
-
 }
