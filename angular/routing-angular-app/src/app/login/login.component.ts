@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from 'src/services/authentication.service';
 
 @Component({
@@ -7,11 +7,21 @@ import { AuthenticationService } from 'src/services/authentication.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
   username: string = "";
   password: string = "";
 
-  constructor(private auth: AuthenticationService, private router: Router) {}
+  constructor(private auth: AuthenticationService, private router: Router, private activeRoute: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    this.activeRoute.queryParamMap.subscribe((query) => {
+      const logout = query.get('logout');
+      if (logout) {
+        this.auth.logout();
+        alert("You are now logged out!");
+      }
+    })
+  }
 
   loginUser() {
     let newUser = this.auth.login(this.username, this.password);

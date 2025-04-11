@@ -9,6 +9,7 @@ import { ContactmeComponent } from './contactme/contactme.component';
 import { ContactcompanyComponent } from './contactcompany/contactcompany.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { NewregisterComponent } from './newregister/newregister.component';
+import { myActivator } from './auth-guard.guard';
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
@@ -19,8 +20,7 @@ const routes: Routes = [
   {path: "contact", component: ContactComponent, children: [
     {path: "contactcompany", component: ContactcompanyComponent},
     {path: "contactme", component: ContactmeComponent},
-
-  ]},
+  ], canActivate: [myActivator]},
   {path: "", component: HomeComponent},
   {path: "**", component: PagenotfoundComponent},
 ];
