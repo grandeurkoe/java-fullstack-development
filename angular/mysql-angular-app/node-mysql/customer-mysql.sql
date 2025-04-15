@@ -1,6 +1,6 @@
-CREATE DATABASE CustomerRecords;
+CREATE DATABASE customerrecords;
 
-USE CustomerRecords;
+USE customerrecords;
 
 CREATE TABLE customer (
 custid int, firstname varchar(45), lastname varchar(45), 
