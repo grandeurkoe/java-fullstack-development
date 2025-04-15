@@ -1,3 +1,15 @@
 <h1>Parent Child Data Binding</h1>
 <hr />
-<app-child></app-child>
+<div class="parent-container">
+  <p>Data received from child component: {{ dataFromChild }}</p>
+
+  <div class="child-container">
+    <app-child 
+      [welcomeMessage]="greeting"
+      [newMessageOne]="messageOne"
+      [newMessageTwo]="messageTwo"
+      [newMessageThree]="messageThree"
+      (myEvent)="updatedData($event)">
+    </app-child>
+  </div>
+</div>

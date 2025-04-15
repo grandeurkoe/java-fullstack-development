@@ -1,1 +1,14 @@
-<h2>This is the child component.</h2>
+<div class="child-content">
+    <h2>This is the child component.</h2>
+    <p>{{ welcomeMessage }}</p>
+    <p>{{ newMessageOne }}</p>
+    <p>{{ newMessageTwo }}</p>
+    <p>{{ newMessageThree }}</p>
+  
+    <div class="input-container">
+      Enter name: <input type="text" #box1>
+      <button (click)="hello(box1.value)">Hello!</button>
+      <button (click)="myEvent.emit(box1.value)">Hello, Parent!</button>
+    </div>
+  </div>
+  
