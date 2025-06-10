@@ -7,8 +7,6 @@
 *.iws
 
 # Eclipse metadata
-.project
-.classpath
 .settings/
 
 # Maven
